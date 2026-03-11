@@ -1,0 +1,64 @@
+#!/bin/bash
+# OpenClaw Skill 安装脚本
+# 用法：./install.sh
+
+set -e
+
+SKILL_NAME="{{SKILL_NAME}}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OPENCLAW_DIR="$HOME/.openclaw"
+SKILLS_DIR="$OPENCLAW_DIR/skills"
+
+echo "🔧 OpenClaw Skill 安装程序"
+echo "=========================="
+echo ""
+
+# 检查 OpenClaw
+if ! command -v openclaw &> /dev/null; then
+    echo "❌ 未检测到 OpenClaw"
+    echo "请先安装：npm install -g openclaw"
+    exit 1
+fi
+
+echo "✅ OpenClaw 已安装"
+
+# 创建技能目录
+mkdir -p "$SKILLS_DIR"
+
+# 检查是否已安装
+if [ -d "$SKILLS_DIR/$SKILL_NAME" ]; then
+    echo "⚠️  技能已安装，是否覆盖？(y/N)"
+    read -r confirm
+    if [[ "$confirm" =~ ^[Yy]$ ]]; then
+        rm -rf "$SKILLS_DIR/$SKILL_NAME"
+        echo "🗑️  已删除旧版本"
+    else
+        echo "❌ 安装取消"
+        exit 0
+    fi
+fi
+
+# 复制技能文件
+echo "📦 正在安装技能..."
+mkdir -p "$SKILLS_DIR/$SKILL_NAME"
+cp -r "$SCRIPT_DIR/skills/"* "$SKILLS_DIR/$SKILL_NAME/"
+
+# 验证
+if [ -f "$SKILLS_DIR/$SKILL_NAME/SKILL.md" ]; then
+    echo "✅ 技能文件已复制"
+else
+    echo "❌ 技能文件复制失败"
+    exit 1
+fi
+
+# 重启 Gateway
+echo ""
+echo "🔄 正在重启 Gateway..."
+openclaw gateway restart
+sleep 3
+
+echo ""
+echo "=========================="
+echo "✅ 安装完成！"
+echo ""
+echo "技能位置：$SKILLS_DIR/$SKILL_NAME"
