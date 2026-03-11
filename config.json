@@ -1,0 +1,26 @@
+{
+  "search": {
+    "defaultLimit": 10,
+    "maxLimit": 50,
+    "platforms": ["clawhub", "github"]
+  },
+  "scoring": {
+    "weights": {
+      "relevance": 0.5,
+      "community": 0.25,
+      "activity": 0.15,
+      "maturity": 0.10
+    }
+  },
+  "cache": {
+    "enabled": true,
+    "defaultTtlHours": 24,
+    "maxCacheSize": 100,
+    "path": "~/.openclaw/skills/skill-searcher/cache/"
+  },
+  "security": {
+    "autoInstallSingleMatch": true,
+    "requireApprovalFor": ["MEDIUM", "HIGH", "EXTREME"],
+    "vetAfterInstall": true
+  }
+}
