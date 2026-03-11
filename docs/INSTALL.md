@@ -36,7 +36,7 @@ openclaw gateway restart
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/openclaw-skill-wecom-channel-fix.git
+git clone https://github.com/fclwtt/openclaw-skill-wecom-channel-fix.git
 
 # 进入目录
 cd openclaw-skill-wecom-channel-fix
@@ -51,7 +51,7 @@ cd openclaw-skill-wecom-channel-fix
 
 ```bash
 # 1. 下载技能包
-wget https://github.com/YOUR_USERNAME/openclaw-skill-wecom-channel-fix/archive/refs/tags/v1.0.0.tar.gz
+wget https://github.com/fclwtt/openclaw-skill-wecom-channel-fix/archive/refs/tags/v1.0.0.tar.gz
 
 # 2. 解压
 tar -xzf v1.0.0.tar.gz

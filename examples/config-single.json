@@ -1,0 +1,32 @@
+{
+  "_comment": "单账号模式配置示例 - OpenClaw 企微通道",
+  "_version": "1.0.0",
+  
+  "channels": {
+    "wecom": {
+      "enabled": true,
+      "botId": "aib90HQJS5ymekYyQiC1iBcLOmeci4v1VGI",
+      "secret": "YOUR_SECRET_HERE",
+      "dmPolicy": "pairing",
+      "allowFrom": [],
+      "groupPolicy": "open"
+    }
+  },
+  
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "wecom",
+        "accountId": "*"
+      }
+    }
+  ],
+  
+  "plugins": {
+    "allow": ["wecom"],
+    "entries": {
+      "wecom": {"enabled": true}
+    }
+  }
+}

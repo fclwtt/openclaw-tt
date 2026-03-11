@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://openclaw.ai)
-[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/YOUR_USERNAME/openclaw-skill-wecom-channel-fix/releases)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](https://github.com/fclwtt/openclaw-skill-wecom-channel-fix/releases)
 
 ---
 
@@ -40,7 +40,7 @@ clawhub install wecom-channel-fix
 
 ```bash
 # 克隆仓库
-git clone https://github.com/YOUR_USERNAME/openclaw-skill-wecom-channel-fix.git
+git clone https://github.com/fclwtt/openclaw-skill-wecom-channel-fix.git
 
 # 进入目录
 cd openclaw-skill-wecom-channel-fix
@@ -53,7 +53,7 @@ cd openclaw-skill-wecom-channel-fix
 
 ```bash
 # 下载技能文件
-wget https://github.com/YOUR_USERNAME/openclaw-skill-wecom-channel-fix/archive/refs/tags/v1.0.0.tar.gz
+wget https://github.com/fclwtt/openclaw-skill-wecom-channel-fix/archive/refs/tags/v1.0.0.tar.gz
 
 # 解压
 tar -xzf v1.0.0.tar.gz
