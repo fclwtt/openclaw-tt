@@ -6,32 +6,35 @@
     "branch": "main",
     "remote": "git@github.com:fclwtt/openclaw-skills.git"
   },
-  "monorepo": {
-    "skillsDir": "skills",
-    "readmePath": "README.md"
-  },
   "categories": {
     "security": {
       "name": "🔒 安全与治理",
-      "skills": ["enforcement-policy"]
+      "description": "安全审查、权限管理相关技能"
     },
     "devtools": {
       "name": "🛠️ 开发工具",
-      "skills": ["skill-publisher"]
+      "description": "开发、发布、调试工具"
     },
     "search": {
       "name": "🔍 搜索与发现",
-      "skills": ["skill-searcher"]
+      "description": "搜索、发现、索引相关技能"
     },
     "wecom": {
       "name": "📱 企业微信",
-      "skills": ["wecom-channel-fix"]
+      "description": "企业微信相关技能"
+    },
+    "other": {
+      "name": "📦 其他",
+      "description": "其他类型技能"
     }
   },
-  "templates": {
-    "readme": "templates/skill-template/README.md.tmpl",
-    "skill": "templates/skill-template/SKILL.md.tmpl",
-    "config": "templates/skill-template/config.json.tmpl",
-    "install": "templates/skill-template/install.sh.tmpl"
+  "files": {
+    "required": ["SKILL.md"],
+    "generated": ["README.md", "LICENSE", "install.sh", ".gitignore"],
+    "optional": ["config.json"]
+  },
+  "directories": {
+    "required": [],
+    "optional": ["scripts", "templates", "docs"]
   }
 }
