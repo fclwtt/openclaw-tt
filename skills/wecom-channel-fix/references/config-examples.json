@@ -1,0 +1,131 @@
+{
+  "_comment": "企业微信通道配置示例 - 供 wecom-channel-fix skill 参考",
+  "_version": "1.0.0",
+  "_updated": "2026-03-11",
+
+  "single_account_working": {
+    "_description": "单账号模式 - 当前插件支持",
+    "channels": {
+      "wecom": {
+        "enabled": true,
+        "botId": "aib90HQJS5ymekYyQiC1iBcLOmeci4v1VGI",
+        "secret": "YOUR_SECRET_HERE",
+        "dmPolicy": "pairing",
+        "allowFrom": [],
+        "groupPolicy": "open",
+        "websocketUrl": "wss://openws.work.weixin.qq.com"
+      }
+    },
+    "bindings": [
+      {
+        "agentId": "main",
+        "match": {
+          "channel": "wecom",
+          "accountId": "*"
+        }
+      }
+    ]
+  },
+
+  "multi_account_not_supported": {
+    "_description": "多账号模式 - 当前插件不支持（v1.0.8）",
+    "_status": "NOT_SUPPORTED",
+    "channels": {
+      "wecom": {
+        "enabled": true,
+        "defaultAccount": "main",
+        "accounts": {
+          "main": {
+            "botId": "aib90HQJS5ymekYyQiC1iBcLOmeci4v1VGI",
+            "secret": "SECRET_1",
+            "dmPolicy": "pairing"
+          },
+          "ai-engineer": {
+            "botId": "aibjeV7g2H-gOp-R19gHi86eeqH_mGJfvXy",
+            "secret": "SECRET_2",
+            "dmPolicy": "pairing"
+          }
+        }
+      }
+    },
+    "bindings": [
+      {
+        "agentId": "main",
+        "match": {"channel": "wecom", "accountId": "main"}
+      },
+      {
+        "agentId": "ai-engineer",
+        "match": {"channel": "wecom", "accountId": "ai-engineer"}
+      }
+    ]
+  },
+
+  "plugin_config_correct": {
+    "_description": "正确的插件配置（使用导出 ID 'wecom'）",
+    "plugins": {
+      "allow": ["wecom"],
+      "entries": {
+        "wecom": {
+          "enabled": true
+        }
+      }
+    }
+  },
+
+  "plugin_config_wrong": {
+    "_description": "错误的插件配置（使用包名而非导出 ID）",
+    "_status": "WILL_CAUSE_ERROR",
+    "plugins": {
+      "allow": ["wecom-openclaw-plugin"],
+      "entries": {
+        "wecom-openclaw-plugin": {
+          "enabled": true
+        }
+      }
+    }
+  },
+
+  "complete_working_config": {
+    "_description": "完整的工作配置示例",
+    "agents": {
+      "list": [
+        {
+          "id": "main",
+          "name": "web 总助",
+          "workspace": "/home/tt/.openclaw/workspace/main",
+          "model": "bailian/qwen3.5-plus"
+        },
+        {
+          "id": "ai-engineer",
+          "name": "AI 工程师小艾",
+          "workspace": "/home/tt/.openclaw/workspace/ai-engineer",
+          "model": "bailian/qwen3.5-plus"
+        }
+      ]
+    },
+    "channels": {
+      "wecom": {
+        "enabled": true,
+        "botId": "aib90HQJS5ymekYyQiC1iBcLOmeci4v1VGI",
+        "secret": "YOUR_SECRET",
+        "dmPolicy": "pairing"
+      }
+    },
+    "bindings": [
+      {
+        "agentId": "main",
+        "match": {"channel": "wecom", "accountId": "*"}
+      },
+      {
+        "agentId": "main",
+        "match": {"channel": "webchat", "accountId": "*"}
+      }
+    ],
+    "plugins": {
+      "allow": ["wecom"],
+      "entries": {
+        "wecom": {"enabled": true}
+      }
+    }
+  }
+}

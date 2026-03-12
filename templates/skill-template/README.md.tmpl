@@ -1,0 +1,106 @@
+# {{SKILL_NAME}}
+
+{{SKILL_DESCRIPTION}}
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![OpenClaw Skill](https://img.shields.io/badge/OpenClaw-Skill-blue)](https://openclaw.ai)
+[![Version](https://img.shields.io/badge/version-{{VERSION}}-green.svg)](https://github.com/fclwtt/openclaw-skills)
+
+---
+
+## 📋 功能
+
+{{FEATURES}}
+
+---
+
+## 🚀 安装
+
+### 方法 1：自动安装
+
+```bash
+./install.sh
+```
+
+### 方法 2：手动安装
+
+```bash
+# 克隆仓库
+git clone https://github.com/fclwtt/openclaw-skills.git
+cd openclaw-skills/skills/{{SKILL_NAME}}
+
+# 复制到 OpenClaw skills 目录
+cp -r . ~/.openclaw/skills/{{SKILL_NAME}}/
+```
+
+---
+
+## 💡 使用方式
+
+{{USAGE}}
+
+---
+
+## ⚙️ 配置
+
+编辑 `~/.openclaw/skills/{{SKILL_NAME}}/config.json`
+
+```json
+{
+  "enabled": true,
+  "option1": "value1"
+}
+```
+
+---
+
+## 📁 项目结构
+
+```
+{{SKILL_NAME}}/
+├── README.md           # 本文档
+├── SKILL.md            # OpenClaw 技能定义
+├── config.json         # 配置文件
+├── install.sh          # 安装脚本
+├── scripts/            # 脚本目录
+├── templates/          # 模板目录
+└── docs/               # 文档目录
+```
+
+---
+
+## 🛠️ 故障排除
+
+### 常见问题
+
+**Q: 安装后不生效？**
+
+A: 重启 OpenClaw Gateway：
+```bash
+openclaw gateway restart
+```
+
+---
+
+## 📝 更新日志
+
+### {{VERSION}} ({{DATE}})
+
+- 🎉 首次发布
+
+---
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](./LICENSE)
+
+---
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+---
+
+**作者:** {{AUTHOR}}  
+**仓库:** [fclwtt/openclaw-skills](https://github.com/fclwtt/openclaw-skills)

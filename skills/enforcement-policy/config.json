@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0",
+  "enabled": true,
+  "priority": "highest",
+  "components": {
+    "globalRules": {
+      "path": "~/.openclaw/_GLOBAL_RULES.md",
+      "autoInject": true
+    },
+    "skillRouter": {
+      "path": "~/.openclaw/skills/mupeng-skill-router",
+      "enabled": true
+    },
+    "installGateway": {
+      "path": "~/.openclaw/skills/skill-install-gateway",
+      "enabled": true
+    },
+    "rulesInjector": {
+      "path": "~/.openclaw/hooks/global-rules-injector",
+      "enabled": true
+    }
+  },
+  "securityReview": {
+    "highRiskTools": ["exec", "write", "edit", "browser"],
+    "mediumRiskTools": ["message"],
+    "requireConfirmation": ["exec", "write", "browser"],
+    "sensitivePaths": [
+      "~/.ssh",
+      "~/.aws",
+      "~/.config",
+      "~/.openclaw/_GLOBAL_RULES.md",
+      "~/.openclaw/openclaw.json"
+    ]
+  },
+  "skillPriority": {
+    "enabled": true,
+    "exceptions": ["greeting", "system-status", "explicit-skip"]
+  },
+  "logging": {
+    "enabled": true,
+    "path": "~/.openclaw/skills/enforcement-policy/logs/"
+  }
+}
