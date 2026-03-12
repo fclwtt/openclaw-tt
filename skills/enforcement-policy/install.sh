@@ -1,0 +1,13 @@
+#!/bin/bash
+# 安装 enforcement-policy
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+OPENCLAW_SKILLS="$HOME/.openclaw/skills"
+SKILL_NAME="enforcement-policy"
+
+echo "📦 安装 $SKILL_NAME..."
+mkdir -p "$OPENCLAW_SKILLS/$SKILL_NAME"
+cp -r "$SCRIPT_DIR"/* "$OPENCLAW_SKILLS/$SKILL_NAME/"
+echo "✅ 安装完成！"
+echo ""
+echo "重启 OpenClaw Gateway 使技能生效："
+echo "  openclaw gateway restart"
