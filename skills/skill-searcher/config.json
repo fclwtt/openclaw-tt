@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "platforms": {
+    "clawhub": {
+      "enabled": true,
+      "url": "https://clawhub.com/api"
+    },
+    "github": {
+      "enabled": true,
+      "url": "https://api.github.com"
+    }
+  },
+  "scoring": {
+    "relevance": 0.5,
+    "community": 0.25,
+    "activity": 0.15,
+    "maturity": 0.1
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 86400
+  }
+}
